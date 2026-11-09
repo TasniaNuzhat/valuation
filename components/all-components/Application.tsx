@@ -1,0 +1,8 @@
+"use client";
+import React from "react";
+import { cn } from "@/lib/utils";
+interface ApplicationProps { className?: string; }
+export default function Application({ className }: ApplicationProps) {
+  const html = "<section class=\"wrap application section\" id=\"application\"><div class=\"reveal\"><span class=\"ref-eyebrow\">Application</span><h2>Prepare for Your Next<br/><span class=\"accent\">Funding Conversation.</span></h2><p class=\"lead\" style=\"margin-top:25px\">Tell us a little about your startup and what you'd like to understand better.</p></div><form class=\"form reveal\" id=\"applyform\"><label for=\"name\">Full name</label><input id=\"name\" placeholder=\"Your full name\" required=\"\"/><label for=\"email\">Email address</label><input id=\"email\" placeholder=\"you@company.com\" required=\"\" type=\"email\"/><label for=\"startup\">Startup name</label><input id=\"startup\" placeholder=\"Your startup\" required=\"\"/><label for=\"stage\">Fundraising stage</label><select id=\"stage\" required=\"\"><option value=\"\">Select a stage</option><option>Exploring fundraising</option><option>Preparing to raise</option><option>Currently fundraising</option><option>Reviewing an offer</option></select><label for=\"questions\">What would you like to understand better?</label><textarea id=\"questions\" placeholder=\"Share your valuation, equity, or term sheet questions\"></textarea><button class=\"btn\" type=\"submit\">Submit application</button><p aria-live=\"polite\" class=\"notice\" id=\"formnote\"></p></form></section>";
+  return <div className={cn("section-host", className)} dangerouslySetInnerHTML={{ __html: html }} />;
+}

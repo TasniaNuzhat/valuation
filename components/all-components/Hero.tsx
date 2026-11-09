@@ -1,0 +1,9 @@
+"use client";
+import React from "react";
+import { cn } from "@/lib/utils";
+import heroImg from "@/src/assets/images/hero.jpg";
+interface HeroProps { className?: string; }
+export default function Hero({ className }: HeroProps) {
+  const html = "<section class=\"wrap hero\"><div class=\"reveal\"><span class=\"ref-eyebrow\">For founders preparing to raise</span><h1><span class=\"hero-line\">Understand Your Valuation.</span><span class=\"hero-line accent\">Negotiate Your Terms.</span></h1><p class=\"lead\">Learn how startup valuations are determined, how investment changes ownership, and which term sheet provisions deserve careful review before you make a funding decision.</p><div class=\"actions\"><a class=\"btn\" href=\"#application\">Apply now</a><a class=\"btn btn-outline\" href=\"#process\">See how it works</a></div></div><div class=\"hero-visual reveal\"><img alt=\"Financial planning desk with calculator, notebook, and business charts\" class=\"hero-replacement-photo\" src=\"__HERO_IMAGE__\"/><div class=\"hero-note-card\"><span aria-hidden=\"true\" class=\"note-icon\">▥</span><div><small>Funding question</small><strong>What does this offer mean for my equity?</strong></div></div><div class=\"hero-deal-card\"><div class=\"deal-card-top\"><span class=\"deal-dot\"></span><span>Term sheet review</span><span class=\"deal-status\">In focus</span></div>\n<h3>Understand the offer.</h3>\n<div class=\"deal-row\"><span>Valuation</span><strong>Review assumptions</strong></div>\n<div class=\"deal-row\"><span>Equity dilution</span><strong>Model ownership</strong></div>\n<div class=\"deal-row\"><span>Investor rights</span><strong>Check key terms</strong></div></div></div></section>".replace("__HERO_IMAGE__", heroImg.src);
+  return <div className={cn("section-host", className)} dangerouslySetInnerHTML={{ __html: html }} />;
+}
